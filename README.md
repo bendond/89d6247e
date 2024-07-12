@@ -2,7 +2,7 @@
 
 This is my submission for the front-end programming assessment.
 
-For a live demo vist: https://aircall.jschneider.ca/
+For a live demo visit: https://aircall.jschneider.ca/
 
 ## Installation
 
