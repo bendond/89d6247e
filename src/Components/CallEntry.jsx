@@ -115,7 +115,7 @@ const CallEntry = ({ call, fetchData }) => {
           ref={contentRef}
             >
             <div className="flex justify-center mt-4">
-                <button className="justify-center btn btn-sm bg-green-700 border-green-700 px-4 py-2 rounded" onClick={handleArchive}>
+                <button className="justify-center btn btn-sm bg-green-700 border-green-700 hover:bg-green-600 px-4 py-2 rounded" onClick={handleArchive}>
                 {call.is_archived === false ? 'Archive Call' : 'Unarchive Call'}
                 </button>
             </div>
