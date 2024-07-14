@@ -79,7 +79,7 @@ const App = () => {
             node.style.visibility = 'hidden';
           }}
         >
-          <div className="absolute inset-0">
+          <div className="absolute inset-0 overflow-y-auto">
             {/* Show active calls or archived call depending on user selecton */}
             {view === 'main' ? <Callbox data={callData} fetchData={fetchData} isArchived={false} /> : <Callbox data={callData} fetchData={fetchData} isArchived={true} />}
           </div>

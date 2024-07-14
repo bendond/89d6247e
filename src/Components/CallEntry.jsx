@@ -43,6 +43,21 @@ const CallEntry = ({ call, fetchData }) => {
             console.log('Error:' , error);
         }
       };
+   /*
+    * Funciton: formatTime
+    * Description: takes a total number of seconds and displays it in a more readable format
+    * Comment parameters:
+    *   totalSeconds : the total number of seconds to format
+    * 
+    */
+    const formatTime = (totalSeconds) => {
+      const minutes = Math.floor(totalSeconds / 60);
+      const seconds = totalSeconds % 60;
+      const minuteStr = minutes === 1 ? 'minute' : 'minutes';
+      const secondStr = seconds === 1 ? 'second' : 'seconds';
+      
+      return `${minutes} ${minuteStr} and ${seconds} ${secondStr}`;
+    };
 
     useEffect(() => {
     if (contentRef.current) {
@@ -114,10 +129,17 @@ const CallEntry = ({ call, fetchData }) => {
           style={{ maxHeight: isExpanded ? `${contentHeight}px` : '0' }}
           ref={contentRef}
             >
+              <div className='pt-5'>
+                Call lasted { formatTime(call.duration)}
+              </div>
             <div className="flex justify-center mt-4">
-                <button className="justify-center btn btn-sm bg-green-700 border-green-700 hover:bg-green-600 px-4 py-2 rounded" onClick={handleArchive}>
+
+              <div>
+              <button className="justify-center btn btn-sm bg-green-700 border-green-700 hover:bg-green-600 px-4 py-2 rounded" onClick={handleArchive}>
                 {call.is_archived === false ? 'Archive Call' : 'Unarchive Call'}
                 </button>
+              </div>
+
             </div>
         </div>
         </div>
