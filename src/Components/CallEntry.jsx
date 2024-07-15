@@ -58,6 +58,26 @@ const CallEntry = ({ call, fetchData }) => {
       
       return `${minutes} ${minuteStr} and ${seconds} ${secondStr}`;
     };
+   /*
+    * Funciton: formatPhoneNumber
+    * Description: takes a phone number an formats it into a more readable format ex: +1 123-456-7890
+    * Comment parameters:
+    *   phoneNumber : number to be formated
+    * 
+    */
+    const formatPhoneNumber = (phoneNumber) => {
+      // Remove any non-digit characters
+      const cleaned = ('' + phoneNumber).replace(/\D/g, '');
+
+      // Check if the cleaned number has 11 digits and starts with '1'
+      const match = cleaned.match(/^1(\d{3})(\d{3})(\d{4})$/);
+
+      if (match) {
+        return `+1 ${match[1]}-${match[2]}-${match[3]}`;
+      }
+
+      return phoneNumber;
+    };
 
     useEffect(() => {
     if (contentRef.current) {
@@ -114,8 +134,8 @@ const CallEntry = ({ call, fetchData }) => {
                 </svg>
             )}
               <div className="font-bold ml-2">
-                <p>{call.from}</p>
-                <p className="text-xs text-gray-500">tried to call from {call.via}</p>
+                <p>{formatPhoneNumber(call.from)}</p>
+                <p className="text-xs text-gray-500 whitespace-nowrap">tried to call {formatPhoneNumber(call.to)}</p>
               </div>
             </div>
             <div className="divider divider-vertical"></div>
