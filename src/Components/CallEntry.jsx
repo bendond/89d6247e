@@ -134,8 +134,17 @@ const CallEntry = ({ call, fetchData }) => {
                 </svg>
             )}
               <div className="font-bold ml-2">
-                <p>{formatPhoneNumber(call.from)}</p>
-                <p className="text-xs text-gray-500 whitespace-nowrap">tried to call {formatPhoneNumber(call.to)}</p>
+              {call.direction === 'outbound' ? (
+                <>
+                                <p>{formatPhoneNumber(call.to)}</p>
+                                <p className="text-xs text-gray-500 whitespace-nowrap">called from {formatPhoneNumber(call.from)}</p>
+                </>
+                ) : (
+                  <>
+                                  <p>{formatPhoneNumber(call.from)}</p>
+                                  <p className="text-xs text-gray-500 whitespace-nowrap">tried to call {formatPhoneNumber(call.to)}</p>
+                  </>)}
+
               </div>
             </div>
             <div className="divider divider-vertical"></div>
