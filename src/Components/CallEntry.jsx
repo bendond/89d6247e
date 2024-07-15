@@ -48,7 +48,7 @@ const CallEntry = ({ call, fetchData }) => {
     * Description: takes a total number of seconds and displays it in a more readable format
     * Comment parameters:
     *   totalSeconds : the total number of seconds to format
-    * 
+    * Returns: string : A formatted call duration time
     */
     const formatTime = (totalSeconds) => {
       const minutes = Math.floor(totalSeconds / 60);
@@ -63,7 +63,7 @@ const CallEntry = ({ call, fetchData }) => {
     * Description: takes a phone number an formats it into a more readable format ex: +1 123-456-7890
     * Comment parameters:
     *   phoneNumber : number to be formated
-    * 
+    * Returns : string : If the phone number meets the formatting criteria the formatted number is returned. Otherwise the original number is returned
     */
     const formatPhoneNumber = (phoneNumber) => {
       // Remove any non-digit characters
