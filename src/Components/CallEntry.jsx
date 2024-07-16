@@ -55,6 +55,10 @@ const CallEntry = ({ call, fetchData }) => {
       const seconds = totalSeconds % 60;
       const minuteStr = minutes === 1 ? 'minute' : 'minutes';
       const secondStr = seconds === 1 ? 'second' : 'seconds';
+
+      if (minutes === 0) {
+        return `${seconds} ${secondStr}`;
+      }
       
       return `${minutes} ${minuteStr} and ${seconds} ${secondStr}`;
     };
