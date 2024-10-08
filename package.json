@@ -1,0 +1,37 @@
+{
+  "name": "frontend-hiring-challenge",
+  "version": "1.0.0",
+  "description": "Leap test",
+  "main": "index.js",
+  "repository": "",
+  "author": "",
+  "license": "",
+  "private": false,
+  "scripts": {
+    "start": "webpack-dev-server --mode development --open",
+    "build": "webpack --mode production"
+  },
+  "dependencies": {
+    "autoprefixer": "^9.8.8",
+    "postcss": "^7.0.39",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "react-transition-group": "^4.4.5",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "8.1.0",
+    "css-loader": "2.1.*",
+    "daisyui": "^1.25.4",
+    "html-loader": "0.5.*",
+    "html-webpack-plugin": "3.2.*",
+    "postcss-loader": "~3.0.0",
+    "style-loader": "0.23.*",
+    "webpack": "4.29.*",
+    "webpack-cli": "3.2.*",
+    "webpack-dev-server": "3.1.*"
+  }
+}

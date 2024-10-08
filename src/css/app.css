@@ -1,0 +1,102 @@
+/*
+* FILE : app.css
+* PROJECT : Air Call
+* PROGRAMMER : Jason S
+* FIRST VERSION : 7/12/2024
+* DESCRIPTION : Contains all the custom styling for the air call app
+* 
+*/
+#app {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+#app .container {
+  width: 376px;
+  height: 666px;
+  z-index: 100;
+
+  background: white;
+  border-radius: 3px;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, .9);
+  overflow: hidden;
+}
+
+#app .container-view {
+  padding: 20px;
+}
+
+.slide-left-enter {
+  transform: translateX(100%);
+  opacity: 0;
+}
+.slide-left-enter-active {
+  transform: translateX(0);
+  opacity: 1;
+  transition: transform 450ms, opacity 450ms;
+}
+.slide-left-exit {
+  transform: translateX(0);
+  opacity: 1;
+}
+.slide-left-exit-active {
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: transform 450ms, opacity 450ms;
+}
+
+.slide-right-enter {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+.slide-right-enter-active {
+  transform: translateX(0);
+  opacity: 1;
+  transition: transform 450ms, opacity 450ms;
+}
+.slide-right-exit {
+  transform: translateX(0);
+  opacity: 1;
+}
+.slide-right-exit-active {
+  transform: translateX(100%);
+  opacity: 0;
+  transition: transform 450ms, opacity 450ms;
+}
+
+.expandable-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.group:hover .group-hover\:fill-aircall-green {
+  fill: #2AC420;
+}
+
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--secondary) var(--primary);
+}
+
+*::-webkit-scrollbar {
+  width: 15px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--primary);
+  border-radius: 5px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--secondary);
+  border-radius: 14px;
+  border: 3px solid var(--primary);
+}

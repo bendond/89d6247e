@@ -1,0 +1,11 @@
+/*
+* FILE : tailwind.css
+* PROJECT : Air Call
+* PROGRAMMER : Jason S
+* FIRST VERSION : 7/12/2024
+* DESCRIPTION : Directives for tailwindcss
+* 
+*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
